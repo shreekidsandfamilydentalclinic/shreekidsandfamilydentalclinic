@@ -7,139 +7,246 @@
 <title>Shree Kids & Family Dental Clinic</title>
 
 <style>
-body {
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#f8fafc;
+:root{
+  --primary:#0ea5e9;
+  --dark:#0f172a;
+  --muted:#64748b;
+  --bg:#f6f8fc;
 }
 
-/* HEADER */
-header {
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+  font-family:"Segoe UI", sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  overflow-x:hidden;
+}
+
+/* FLOATING GLASS NAV */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 30px;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  position:sticky;
-  top:0;
+  padding:18px 40px;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+
   z-index:1000;
+  transition:0.3s;
 }
 
-nav a {
-  margin:0 10px;
+header.shrink{
+  padding:12px 40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+nav a{
+  margin:0 12px;
   text-decoration:none;
-  color:#333;
+  color:#334155;
+  font-weight:500;
 }
 
 /* HERO */
-.hero {
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  padding:100px 20px;
-  background:linear-gradient(to right,#e0f2fe,#f0f9ff);
+
+  background:linear-gradient(-45deg,#e0f2fe,#f8fafc,#dbeafe,#f0f9ff);
+  background-size:400% 400%;
+  animation:gradientMove 10s ease infinite;
+  padding:0 20px;
 }
 
-.hero h1 {
-  font-size:42px;
-  color:#0c4a6e;
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
-.btn {
-  padding:12px 20px;
-  background:#0284c7;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
+.hero h1{
+  font-size:58px;
+  max-width:850px;
+  animation:fadeUp 1s ease;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  margin-top:12px;
+  animation:fadeUp 1.2s ease;
+}
+
+.btn{
   display:inline-block;
-  margin:10px;
+  margin:12px;
+  padding:14px 24px;
+  border-radius:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:white;
+  box-shadow:0 15px 30px rgba(14,165,233,0.25);
+}
+
+.btn-primary:hover{
+  transform:translateY(-5px) scale(1.02);
+}
+
+.btn-outline{
+  background:white;
+  border:1px solid #e2e8f0;
 }
 
 /* BADGES */
-.badges {
-  margin-top:20px;
+.badges{
+  margin-top:25px;
 }
-.badge {
+
+.badge{
   display:inline-block;
   background:white;
-  padding:8px 15px;
-  margin:5px;
-  border-radius:20px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  padding:10px 16px;
+  margin:6px;
+  border-radius:999px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  animation:fadeUp 1.4s ease;
 }
 
-/* SECTION */
-.section {
+/* SECTIONS */
+.section{
   max-width:1100px;
   margin:auto;
-  padding:60px 20px;
+  padding:100px 20px;
+  text-align:center;
 }
 
-/* CARDS */
-.grid {
+.section h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section p{
+  color:var(--muted);
+}
+
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-top:40px;
 }
 
-.card {
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+/* LUXURY CARD */
+.card{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(10px);
+  padding:26px;
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.05);
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
+  transition:0.4s;
+
+  opacity:0;
+  transform:translateY(30px);
 }
 
-/* GALLERY */
-.gallery img {
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.1);
+}
+
+/* IMAGES */
+img,video{
   width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:10px;
+  border-radius:16px;
+  transition:0.3s;
 }
 
-/* VIDEO */
-video {
-  width:100%;
-  border-radius:10px;
+img:hover{
+  transform:scale(1.03);
 }
 
 /* DOCTOR */
-.doctor {
+.doctor{
   display:flex;
   flex-wrap:wrap;
-  gap:30px;
+  justify-content:center;
   align-items:center;
+  gap:50px;
 }
 
-.doctor img {
+.doctor img{
   width:300px;
-  border-radius:10px;
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* CTA */
+.cta{
+  margin:80px auto;
+  max-width:1000px;
+  background:linear-gradient(135deg,#0ea5e9,#0284c7);
+  color:white;
+  padding:70px 20px;
+  border-radius:24px;
+  box-shadow:0 25px 70px rgba(14,165,233,0.35);
 }
 
 /* FOOTER */
-footer {
-  background:#0c4a6e;
+footer{
+  background:#0f172a;
   color:white;
   text-align:center;
-  padding:30px;
+  padding:40px;
 }
 
 /* WHATSAPP */
-.whatsapp {
+.whatsapp{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:white;
-  padding:15px;
+  padding:16px;
   border-radius:50%;
+  font-size:20px;
   text-decoration:none;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header id="nav">
   <h2>Shree Dental Clinic</h2>
   <nav>
     <a href="#services">Services</a>
@@ -150,89 +257,65 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Painless dental care for your family</h1>
-  <p>Advanced and gentle treatments for kids and adults</p>
+  <h1>Luxury Dental Care with Precision & Comfort</h1>
+  <p>Advanced painless dentistry for kids & families</p>
 
-  <a class="btn" href="tel:7385314994">Call Now</a>
-  <a class="btn" href="https://wa.me/917385314994">WhatsApp</a>
+  <div>
+    <a class="btn btn-primary" href="tel:7385314994">Book Appointment</a>
+    <a class="btn btn-outline" href="https://wa.me/917385314994">WhatsApp</a>
+  </div>
 
   <div class="badges">
     <span class="badge">⭐ 4.8 Rating</span>
     <span class="badge">MDS Specialist</span>
-    <span class="badge">Kids Friendly</span>
+    <span class="badge">Child Friendly</span>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="section" id="services">
-  <h2>Our Services</h2>
+<section id="services" class="section">
+  <h2>Premium Dental Services</h2>
+
   <div class="grid">
-    <div class="card">Pain-Free Root Canal</div>
-    <div class="card">Deep Cleaning</div>
+    <div class="card">Painless Root Canal</div>
+    <div class="card">Smile Designing</div>
+    <div class="card">Kids Dentistry</div>
     <div class="card">Teeth Whitening</div>
-    <div class="card">Kids Dental Care</div>
+    <div class="card">Braces & Aligners</div>
+    <div class="card">Preventive Care</div>
   </div>
 </section>
 
-<!-- GALLERY (YOUR IMAGES) -->
-<section class="section" id="gallery">
-  <h2>Clinic Gallery</h2>
-  <div class="grid gallery">
-    <img src="images/shreeclinic.jpeg">
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2>Clinic Experience</h2>
+
+  <div class="grid">
     <img src="images/shreeclinic1.jpg">
     <img src="images/shreeclinic2.jpg">
     <img src="images/shreeclinic3.jpeg">
     <img src="images/shreeclinic4.jpeg">
-    <img src="images/shreeclinic5.jpeg">
-    <img src="images/shreeclinic6.jpeg">
-    <img src="images/shreeclinic7.jpeg">
-    <img src="images/shreeclinic8.jpeg">
-    <img src="images/shreeclinic9.jpg">
-    <img src="images/shreeclinic10.jpg">
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section class="section">
-  <h2>Treatment Videos</h2>
-  <div class="grid">
-    <video controls src="videos/vid04.mp4"></video>
-    <video controls src="videos/vid05.mp4"></video>
-    <video controls src="videos/vid05.mp4"></video>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="section" id="reviews">
-  <h2>Patient Reviews</h2>
+<section id="reviews" class="section">
+  <h2>Patient Stories</h2>
+
   <div class="grid">
-    <div class="card">
-⭐⭐⭐⭐⭐<br>
-"I had dental cement fillings done on two of my teeth. Dr. Sumeet Tanurkar is very skilled and made the entire procedure smooth and completely painless. Highly satisfied with the treatment and overall experience."<br>
-<b>Aniket Deshpande</b>
-    </div>
-
-    <div class="card">
-⭐⭐⭐⭐⭐<br>
-"Absolutely fantastic experience from start to finish, the doctor is highly skilled and take a time to explain every step of treatment in simple language.
-The clinic is clean, hygienic and equipped with modern technology.
-I am extremely satisfied with the results, highly recommend. Overall best dentist in dharmabad town."<br>
-<b>Uday Kadam</b>
-    </div>
-
-    <div class="card">
-⭐⭐⭐⭐⭐<br>
-"दातांचे काम छान वाटलं, समोर पण येणार ट्रीटमेंटसाठी, आणि धर्माबाद वाल्यांना दातांच्या त्रास आणि कामा साठी हेच suggest करेल. धन्यवाद डॉ सुमित सर तुमच्या छान ट्रीटमेंट बद्दल.🙏👍<br>
-<b>Akash Malge</b>
-    </div>
+    <div class="card">⭐⭐⭐⭐⭐<br>Painless experience<br><b>Aniket</b></div>
+    <div class="card">⭐⭐⭐⭐⭐<br>Best clinic in city<br><b>Uday</b></div>
+    <div class="card">⭐⭐⭐⭐⭐<br>Very professional care<br><b>Akash</b></div>
   </div>
 </section>
 
 <!-- DOCTOR -->
 <section class="section">
   <h2>Meet Your Dentist</h2>
+
   <div class="doctor">
     <img src="images/docphoto.jpeg">
+
     <div>
       <h3>Dr. Sumeet Sharad Tanurkar</h3>
       <p>BDS, MDS (MUHS)</p>
@@ -241,11 +324,37 @@ I am extremely satisfied with the results, highly recommend. Overall best dentis
   </div>
 </section>
 
+<!-- CTA -->
+<section class="cta">
+  <h2>Book Your Premium Dental Experience Today</h2>
+  <a class="btn btn-primary" href="tel:7385314994">Call Now</a>
+</section>
+
 <footer>
   © 2026 Shree Dental Clinic
 </footer>
 
 <a class="whatsapp" href="https://wa.me/917385314994">💬</a>
+
+<script>
+// NAV SHRINK
+window.addEventListener("scroll", () => {
+  document.getElementById("nav").classList.toggle("shrink", window.scrollY > 50);
+});
+
+// SCROLL ANIMATION
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
