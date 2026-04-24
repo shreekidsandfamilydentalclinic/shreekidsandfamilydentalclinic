@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shree Kids & Family Dental Clinic</title>
 
 <style>
@@ -12,83 +13,69 @@ body {
   background:#f8fafc;
 }
 
+/* HEADER */
 header {
-  background:white;
-  padding:15px 30px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:15px 30px;
+  background:white;
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
-
-header h2 { color:#0284c7; }
 
 nav a {
   margin:0 10px;
   text-decoration:none;
   color:#333;
-  font-weight:500;
 }
 
+/* HERO */
 .hero {
-  padding:80px 20px;
   text-align:center;
+  padding:100px 20px;
   background:linear-gradient(to right,#e0f2fe,#f0f9ff);
 }
 
 .hero h1 {
-  font-size:40px;
+  font-size:42px;
   color:#0c4a6e;
-}
-
-.hero p {
-  max-width:600px;
-  margin:auto;
-  color:#444;
 }
 
 .btn {
   padding:12px 20px;
-  margin:10px;
   background:#0284c7;
   color:white;
-  border-radius:6px;
   text-decoration:none;
+  border-radius:6px;
   display:inline-block;
+  margin:10px;
 }
 
+/* BADGES */
 .badges {
-  display:flex;
-  justify-content:center;
-  gap:20px;
   margin-top:20px;
-  flex-wrap:wrap;
 }
-
 .badge {
+  display:inline-block;
   background:white;
-  padding:10px 15px;
+  padding:8px 15px;
+  margin:5px;
   border-radius:20px;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-.stats {
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:40px;
-  background:white;
-}
-
-.stat h3 { color:#0284c7; }
-
+/* SECTION */
 .section {
-  padding:60px 20px;
   max-width:1100px;
   margin:auto;
+  padding:60px 20px;
 }
 
-.services {
+/* CARDS */
+.grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
@@ -101,17 +88,51 @@ nav a {
   box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-.testimonials {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
+/* GALLERY */
+.gallery img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
-.footer {
+/* VIDEO */
+video {
+  width:100%;
+  border-radius:10px;
+}
+
+/* DOCTOR */
+.doctor {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  align-items:center;
+}
+
+.doctor img {
+  width:300px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+footer {
   background:#0c4a6e;
   color:white;
   text-align:center;
   padding:30px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
 }
 </style>
 </head>
@@ -122,86 +143,109 @@ nav a {
   <h2>Shree Dental Clinic</h2>
   <nav>
     <a href="#services">Services</a>
-    <a href="#doctor">Doctor</a>
+    <a href="#gallery">Gallery</a>
     <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Painless dental care for your family</h1>
-  <p>Advanced and gentle treatments for kids and adults — calm, modern experience.</p>
+  <p>Advanced and gentle treatments for kids and adults</p>
 
-  <a class="btn" href="tel:+917385314994">Call Now</a>
+  <a class="btn" href="tel:7385314994">Call Now</a>
   <a class="btn" href="https://wa.me/917385314994">WhatsApp</a>
 
   <div class="badges">
-    <div class="badge">MDS Specialist</div>
-    <div class="badge">Kids Friendly</div>
-    <div class="badge">Modern Tech</div>
-    <div class="badge">Sterile Clinic</div>
+    <span class="badge">⭐ 4.8 Rating</span>
+    <span class="badge">MDS Specialist</span>
+    <span class="badge">Kids Friendly</span>
   </div>
 </section>
 
-<section class="stats">
-  <div class="stat">
-    <h3>200+</h3>
-    <p>Happy Patients</p>
-  </div>
-  <div class="stat">
-    <h3>4.8★</h3>
-    <p>Rating</p>
-  </div>
-  <div class="stat">
-    <h3>MDS</h3>
-    <p>Specialist</p>
-  </div>
-</section>
-
+<!-- SERVICES -->
 <section class="section" id="services">
   <h2>Our Services</h2>
-  <div class="services">
+  <div class="grid">
     <div class="card">Pain-Free Root Canal</div>
     <div class="card">Deep Cleaning</div>
     <div class="card">Teeth Whitening</div>
     <div class="card">Kids Dental Care</div>
-    <div class="card">Braces & Alignment</div>
-    <div class="card">Preventive Check-up</div>
   </div>
 </section>
 
-<section class="section" id="doctor">
-  <h2>Meet Your Dentist</h2>
-  <div class="card">
-    <h3>Dr. Sumeet Sharad Tanurkar</h3>
-    <p>BDS, MDS (MUHS)</p>
-    <p>Pediatric & Family Dental Specialist</p>
-    <p>Gentle, painless treatment with modern equipment.</p>
+<!-- GALLERY (YOUR IMAGES) -->
+<section class="section" id="gallery">
+  <h2>Clinic Gallery</h2>
+  <div class="grid gallery">
+    <img src="images/shreeclinic.jpeg">
+    <img src="images/shreeclinic1.jpg">
+    <img src="images/shreeclinic2.jpg">
+    <img src="images/shreeclinic3.jpeg">
+    <img src="images/shreeclinic4.jpeg">
+    <img src="images/shreeclinic5.jpeg">
+    <img src="images/shreeclinic6.jpeg">
+    <img src="images/shreeclinic7.jpeg">
+    <img src="images/shreeclinic8.jpeg">
+    <img src="images/shreeclinic9.jpg">
+    <img src="images/shreeclinic10.jpg">
   </div>
 </section>
 
+<!-- VIDEOS -->
+<section class="section">
+  <h2>Treatment Videos</h2>
+  <div class="grid">
+    <video controls src="videos/vid04.mp4"></video>
+    <video controls src="videos/vid05.mp4"></video>
+    <video controls src="videos/vid05.mp4"></video>
+  </div>
+</section>
+
+<!-- REVIEWS -->
 <section class="section" id="reviews">
-  <h2>Patient Stories</h2>
-  <div class="testimonials">
-    <div class="card">"Very smooth and painless treatment." – Aniket</div>
-    <div class="card">"Best dentist in Dharmabad." – Uday</div>
-    <div class="card">"Excellent experience and clean clinic." – Akash</div>
+  <h2>Patient Reviews</h2>
+  <div class="grid">
+    <div class="card">
+⭐⭐⭐⭐⭐<br>
+"I had dental cement fillings done on two of my teeth. Dr. Sumeet Tanurkar is very skilled and made the entire procedure smooth and completely painless. Highly satisfied with the treatment and overall experience."<br>
+<b>Aniket Deshpande</b>
+    </div>
+
+    <div class="card">
+⭐⭐⭐⭐⭐<br>
+"Absolutely fantastic experience from start to finish, the doctor is highly skilled and take a time to explain every step of treatment in simple language.
+The clinic is clean, hygienic and equipped with modern technology.
+I am extremely satisfied with the results, highly recommend. Overall best dentist in dharmabad town."<br>
+<b>Uday Kadam</b>
+    </div>
+
+    <div class="card">
+⭐⭐⭐⭐⭐<br>
+"दातांचे काम छान वाटलं, समोर पण येणार ट्रीटमेंटसाठी, आणि धर्माबाद वाल्यांना दातांच्या त्रास आणि कामा साठी हेच suggest करेल. धन्यवाद डॉ सुमित सर तुमच्या छान ट्रीटमेंट बद्दल.🙏👍<br>
+<b>Akash Malge</b>
+    </div>
   </div>
 </section>
 
-<section class="section" id="contact">
-  <h2>Visit Us</h2>
-  <p>📍 Dharmabad, Maharashtra</p>
-  <p>📞 +91 73853 14994</p>
-  <p>⏰ Mon – Sat • 10 AM – 9 PM</p>
-
-  <a class="btn" href="tel:+917385314994">Call Now</a>
-  <a class="btn" href="https://wa.me/917385314994">WhatsApp</a>
+<!-- DOCTOR -->
+<section class="section">
+  <h2>Meet Your Dentist</h2>
+  <div class="doctor">
+    <img src="images/docphoto.jpeg">
+    <div>
+      <h3>Dr. Sumeet Sharad Tanurkar</h3>
+      <p>BDS, MDS (MUHS)</p>
+      <p>Pediatric & Family Dental Specialist</p>
+    </div>
+  </div>
 </section>
 
-<div class="footer">
-  <p>© 2026 Shree Kids & Family Dental Clinic</p>
-</div>
+<footer>
+  © 2026 Shree Dental Clinic
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917385314994">💬</a>
 
 </body>
 </html>
