@@ -1,10 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shree Kids & Family Dental Clinic</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #0ea5e9;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: #f0f9ff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  color: #0c4a6e;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #0284c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.services, .reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  background: #0c4a6e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
 </head>
+
 <body>
-  <h1>Hello World 🚀</h1>
-  <p>This is my first GitHub Pages site</p>
+
+<header>
+  <h2>Shree Kids & Family Dental Clinic</h2>
+  <p>Dharmabad • Mon–Sat 10AM–9PM • +91 73853 14994</p>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#doctor">Doctor</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Painless dental care for your family</h1>
+  <p>Advanced and gentle treatments for kids and adults.</p>
+
+  <a class="btn" href="tel:+917385314994">Call Now</a>
+  <a class="btn" href="https://wa.me/917385314994">WhatsApp</a>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">Pain-Free Root Canal</div>
+    <div class="card">Deep Cleaning</div>
+    <div class="card">Teeth Whitening</div>
+    <div class="card">Kids Dental Care</div>
+    <div class="card">Braces & Alignment</div>
+    <div class="card">Preventive Check-up</div>
+  </div>
+</section>
+
+<section class="section" id="doctor">
+  <h2>Meet Your Dentist</h2>
+  <p><strong>Dr. Sumeet Sharad Tanurkar</strong></p>
+  <p>BDS, MDS (MUHS) • Pediatric & Preventive Dentist</p>
+  <p>Specialist in painless dental care for kids and adults.</p>
+</section>
+
+<section class="section" id="reviews">
+  <h2>Patient Reviews</h2>
+  <div class="reviews">
+    <div class="card">"Very smooth and painless treatment!" – Aniket</div>
+    <div class="card">"Best dentist in Dharmabad." – Uday</div>
+    <div class="card">"Excellent care for my family." – Suvesh</div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Dharmabad, Maharashtra</p>
+  <p>📞 +91 73853 14994</p>
+  <p>⏰ Mon–Sat: 10 AM – 9 PM</p>
+
+  <a class="btn" href="tel:+917385314994">Call Now</a>
+  <a class="btn" href="https://wa.me/917385314994">WhatsApp</a>
+</section>
+
+<footer>
+  <p>© 2026 Shree Kids & Family Dental Clinic</p>
+</footer>
+
 </body>
 </html>
