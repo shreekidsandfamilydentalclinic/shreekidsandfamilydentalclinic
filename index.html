@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Shree Kids & Family Dental Clinic</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +13,10 @@
   --dark:#0f172a;
   --muted:#64748b;
   --bg:#f8fafc;
+  --card:#ffffff;
 }
 
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -31,7 +32,7 @@ body{
 /* TOP BAR */
 .topbar{
   background:#0f172a;
-  color:white;
+  color:#fff;
   display:flex;
   justify-content:space-between;
   padding:8px 20px;
@@ -43,11 +44,11 @@ nav{
   position:fixed;
   top:35px;
   width:100%;
-  background:white;
+  background:#fff;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
+  padding:14px 20px;
   z-index:1000;
 }
 
@@ -56,153 +57,175 @@ nav{
   align-items:center;
   gap:10px;
 }
-
 .logo img{
-  height:50px;
+  height:48px;
   border-radius:10px;
 }
 
 /* HERO */
 .hero{
-  padding-top:140px;
+  padding-top:170px;
+  padding-bottom:80px;
   text-align:center;
-  padding-bottom:60px;
+  background:linear-gradient(#ffffff,#f8fafc);
 }
 
 .hero-logo{
-  width:80px;
+  width:85px;
   border-radius:50%;
-  margin-bottom:15px;
+  margin-bottom:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
 .badge{
-  background:#e0f2fe;
-  padding:8px 14px;
+  background:#eef2ff;
+  border:1px solid #e2e8f0;
+  padding:8px 18px;
   border-radius:999px;
   display:inline-block;
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:48px;
+  font-size:60px;
+  line-height:1.1;
 }
 
 .hero span{
   color:var(--primary);
+  font-style:italic;
 }
 
+.hero p{
+  max-width:600px;
+  margin:20px auto;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* BUTTONS */
 .btn{
-  padding:12px 22px;
+  padding:14px 28px;
   border-radius:999px;
-  margin:10px;
   display:inline-block;
+  margin:10px;
   text-decoration:none;
   font-weight:600;
 }
 
 .primary{
   background:var(--primary);
-  color:white;
+  color:#fff;
 }
 
 .outline{
-  border:1px solid #ddd;
+  border:1px solid #e2e8f0;
+  background:#fff;
 }
 
 /* SECTION */
 .section{
   max-width:1100px;
   margin:auto;
-  padding:80px 20px;
+  padding:100px 20px;
+}
+
+.section h2{
+  text-align:center;
+  font-size:44px;
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  margin-top:30px;
+  gap:30px;
+  margin-top:50px;
 }
 
 /* CARD */
 .card{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.05);
+  background:var(--card);
+  padding:30px;
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
 }
 
 /* WHY */
 .why-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:30px;
-  margin-top:30px;
+  gap:40px;
+  margin-top:50px;
 }
-
 .why-item{
   display:flex;
   gap:15px;
 }
-
 .why-icon{
-  width:50px;
-  height:50px;
+  width:55px;
+  height:55px;
+  border-radius:18px;
   background:#e0f2fe;
-  border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
+/* MEDIA */
+img,video{
+  width:100%;
+  border-radius:16px;
+}
+
 /* DOCTOR */
 .doctor-container{
   display:flex;
-  flex-wrap:wrap;
-  gap:40px;
+  gap:60px;
   align-items:center;
+  flex-wrap:wrap;
 }
-
 .doctor-image{
-  flex:0 0 320px;
+  flex:0 0 350px;
 }
-
 .doctor-image img{
   width:100%;
-  border-radius:20px;
+  border-radius:24px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.15);
 }
-
 .doctor-content{
   flex:1;
   min-width:280px;
 }
-
 .doctor-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
   margin-top:20px;
 }
-
-/* MEDIA */
-img, video{
-  width:100%;
-  border-radius:16px;
+.doctor-grid div{
+  background:#f1f5f9;
+  padding:10px;
+  border-radius:10px;
 }
 
 /* LIGHTBOX */
 .lightbox{
   display:none;
   position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background:rgba(0,0,0,0.9);
   justify-content:center;
   align-items:center;
 }
-
-.lightbox img,
-.lightbox video{
+.lightbox img, .lightbox video{
   max-width:90%;
   max-height:85%;
 }
@@ -212,10 +235,12 @@ img, video{
   .why-grid{
     grid-template-columns:1fr;
   }
-
   .doctor-container{
     flex-direction:column;
     text-align:center;
+  }
+  .hero h1{
+    font-size:42px;
   }
 }
 </style>
@@ -242,11 +267,14 @@ img, video{
 <section class="hero">
   <img src="images/shreecliniclogo.jpeg" class="hero-logo">
 
-  <div class="badge">⭐ 4.8 rated • 200+ patients</div>
+  <div class="badge">⭐ 4.8 rated • Trusted by 200+ patients</div>
 
   <h1>Painless dental care<br><span>for your family.</span></h1>
 
-  <p>Gentle treatments for kids and adults in a calm environment.</p>
+  <p>
+    Advanced and gentle treatments for kids and adults in a calm,
+    modern environment.
+  </p>
 
   <a href="tel:7385314994" class="btn primary">Call Now</a>
   <a href="https://wa.me/917385314994" class="btn outline">WhatsApp</a>
@@ -267,8 +295,7 @@ img, video{
 
 <!-- WHY -->
 <section class="section">
-  <h2 style="text-align:center;">Why Choose Us</h2>
-
+  <h2>Why Choose Us</h2>
   <div class="why-grid">
     <div class="why-item"><div class="why-icon">💙</div><div>Painless Procedures</div></div>
     <div class="why-item"><div class="why-icon">👶</div><div>Child-Friendly Clinic</div></div>
@@ -311,7 +338,6 @@ img, video{
 <section class="section">
   <h2>Reviews</h2>
   <div class="grid">
-
     <div class="card">
       ⭐⭐⭐⭐⭐
       <p>
@@ -325,14 +351,12 @@ img, video{
         Absolutely fantastic experience from start to finish. The doctor is highly skilled and takes time to explain every step. The clinic is clean, hygienic and equipped with modern technology. Overall best dentist in Dharmabad town.
       </p>
     </div>
-
   </div>
 </section>
 
 <!-- DOCTOR -->
 <section class="section">
   <div class="doctor-container">
-
     <div class="doctor-image">
       <img src="images/docphoto.jpeg">
     </div>
@@ -343,7 +367,7 @@ img, video{
       <p>BDS, MDS (MUHS) • Pediatric & Preventive Dentist</p>
 
       <p>
-        A highly skilled dental specialist dedicated to providing painless and advanced dental treatments for patients of all ages.
+        A highly skilled dental specialist dedicated to providing painless and advanced dental treatments for patients of all ages — with a special love for treating children.
       </p>
 
       <div class="doctor-grid">
@@ -352,9 +376,7 @@ img, video{
         <div>✔ Gentle Treatment</div>
         <div>✔ 200+ Patients Trusted</div>
       </div>
-
     </div>
-
   </div>
 </section>
 
