@@ -76,18 +76,17 @@ nav .container{
 
 /* HERO */
 .hero{
-  padding-top:220px;
-  padding-bottom:100px;
+  padding-top:260px;
+  padding-bottom:120px;
   text-align:center;
 }
 
 .hero-logo{
-  width:100px;
-  height:100px;
+  width:110px;
+  height:110px;
   border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 20px 60px rgba(0,0,0,0.15);
-  margin-bottom:25px;
+  box-shadow:0 25px 70px rgba(0,0,0,0.15);
+  margin-bottom:30px;
 }
 
 .badge{
@@ -100,28 +99,36 @@ nav .container{
 }
 
 .hero h1{
-  font-size:64px;
+  font-size:72px;
+  line-height:1.05;
+  letter-spacing:-1.5px;
   font-weight:600;
-  letter-spacing:-1px;
 }
 
-.hero span{color:var(--primary);font-style:italic;}
+.hero span{
+  color:var(--primary);
+  font-style:italic;
+}
 
 .hero p{
-  max-width:650px;
-  margin:20px auto;
-  color:var(--muted);
+  max-width:700px;
+  margin:25px auto;
   font-size:18px;
+  line-height:1.6;
+  color:var(--muted);
 }
 
 /* BUTTONS */
 .btn{
-  padding:16px 30px;
+  padding:16px 32px;
   border-radius:999px;
   margin:10px;
   display:inline-block;
   text-decoration:none;
+  font-weight:500;
+  transition:.3s;
 }
+.btn:hover{transform:translateY(-2px);}
 
 .primary{background:var(--primary);color:#fff;}
 .outline{border:1px solid #ddd;}
@@ -133,10 +140,9 @@ nav .container{
   gap:20px;
   margin-top:40px;
 }
-
 .pill{
   background:#fff;
-  padding:14px 22px;
+  padding:14px 24px;
   border-radius:18px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
@@ -145,20 +151,19 @@ nav .container{
 .stats{
   display:flex;
   justify-content:center;
-  gap:100px;
-  padding:60px 0;
+  gap:120px;
+  padding:70px 0;
   border-top:1px solid #eee;
   border-bottom:1px solid #eee;
 }
-
 .stat{text-align:center;}
-.stat h2{color:var(--primary);font-size:38px;}
+.stat h2{color:var(--primary);font-size:40px;}
 
 /* SECTION */
 .section{
   max-width:1100px;
   margin:auto;
-  padding:100px 20px;
+  padding:110px 20px;
 }
 
 /* GRID */
@@ -166,23 +171,17 @@ nav .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
-  margin-top:40px;
 }
 
 /* CARD */
 .card{
   background:#fff;
-  padding:28px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  line-height:1.6;
-}
-.card p{
-  margin-top:10px;
-  color:#475569;
+  padding:30px;
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
 }
 
-/* ⭐ REVIEW FIX */
+/* REVIEWS */
 .reviews{
   text-align:center;
 }
@@ -190,13 +189,6 @@ nav .container{
   max-width:800px;
   margin:50px auto 0;
   grid-template-columns:1fr;
-  gap:25px;
-}
-.reviews .card{
-  text-align:left;
-  padding:30px;
-  border-radius:24px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.06);
 }
 
 /* DOCTOR */
@@ -229,7 +221,6 @@ footer{
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
-  gap:40px;
 }
 .footer-bottom{
   border-top:1px solid #1e293b;
@@ -237,14 +228,17 @@ footer{
   padding-top:15px;
   display:flex;
   justify-content:space-between;
-  font-size:13px;
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:42px;}
+  .stats{flex-direction:column;gap:20px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
     <div>📍 Dharmabad • Mon–Sat • 10 AM–9 PM</div>
@@ -252,7 +246,6 @@ footer{
   </div>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="container">
     <div class="logo">
@@ -263,12 +256,11 @@ footer{
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <img src="images/shreecliniclogo.jpeg" class="hero-logo">
   <div class="badge">⭐ 4.8 rated • Trusted by 200+ patients</div>
   <h1>Painless dental care<br><span>for your family.</span></h1>
-  <p>Advanced and gentle treatments for kids and adults — delivered in a calm, modern clinic.</p>
+  <p>Advanced and gentle treatments for kids and adults — delivered in a calm, modern clinic that feels nothing like the dentist you remember.</p>
 
   <a href="tel:7385314994" class="btn primary">Call Now</a>
   <a href="https://wa.me/917385314994" class="btn outline">WhatsApp</a>
@@ -318,36 +310,77 @@ footer{
 <section class="section reviews">
   <h2>Reviews</h2>
   <div class="grid">
-
     <div class="card">
       <p>I had dental cement fillings done on two of my teeth. Dr. Sumeet Tanurkar is very skilled and made the entire procedure smooth and completely painless. Highly satisfied with the treatment and overall experience.</p>
     </div>
-
     <div class="card">
       <p>Absolutely fantastic experience from start to finish. The doctor is highly skilled and takes time to explain every step. The clinic is clean, hygienic and equipped with modern technology. Overall best dentist in Dharmabad town.</p>
     </div>
-
   </div>
 </section>
 
 <!-- DOCTOR -->
+<!-- DOCTOR -->
 <section class="section" id="doctor">
+
   <div class="doctor-container">
+
+    <!-- LEFT IMAGE -->
     <div class="doctor-image">
       <img src="images/docphoto.jpeg">
     </div>
+
+    <!-- RIGHT CONTENT -->
     <div class="doctor-content">
-      <h2>Dr. Sumeet Sharad Tanurkar</h2>
-      <p>BDS, MDS (MUHS)</p>
+
+      <p style="color:#1d9bf0;font-weight:600;letter-spacing:1px;">
+        MEET YOUR DENTIST
+      </p>
+
+      <h1 style="font-size:42px;margin:10px 0;">
+        Dr. Sumeet Sharad Tanurkar
+      </h1>
+
+      <p style="color:#10b981;font-weight:600;margin-bottom:10px;">
+        BDS, MDS (MUHS) • Pediatric & Preventive Dentist
+      </p>
+
+      <p style="color:#64748b;line-height:1.6;">
+        A highly skilled dental specialist dedicated to providing painless and advanced dental treatments for patients of all ages. 
+        With a special focus on children, the clinic ensures every visit is comfortable, stress-free, and friendly.
+      </p>
+
+      <!-- FEATURES GRID -->
+      <div class="doctor-grid">
+
+        <div class="card">✔ Pediatric Specialist</div>
+        <div class="card">✔ Modern Equipment</div>
+        <div class="card">✔ Gentle Treatment</div>
+        <div class="card">✔ 200+ Happy Patients</div>
+
+      </div>
+
+      <!-- QUOTE -->
+      <div class="quote">
+        “Your smile is our responsibility. We ensure every visit is comfortable and stress-free.”
+      </div>
+
+      <!-- CTA -->
+      <a href="tel:7385314994" class="btn primary" style="margin-top:20px;">
+        Book Consultation
+      </a>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-container">
     <div>
-      <b style="color:white;">Shree Kids & Family</b>
+      <b style="color:white;">Shree Kids & Family Multispeciality Dental Clinic</b>
       <p>Dharmabad</p>
     </div>
     <div>
